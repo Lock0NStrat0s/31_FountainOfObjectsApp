@@ -12,6 +12,10 @@ public class Program
 
         bool gameRunning = true;
         DisplayMap(gridMap, player);
+
+        PlayerAction(gridMap, player);
+
+
         //do
         //{
 
@@ -19,6 +23,14 @@ public class Program
         //} while (gameRunning);
 
         Console.ReadLine();
+    }
+
+    private static void PlayerAction(GridMap gridMap, Player player)
+    {
+        "Select action: ".Print();
+        string action = Console.ReadLine().ToLower();
+
+
     }
 
     private static void DisplayMap(GridMap gridMap, Player player)
