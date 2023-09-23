@@ -7,29 +7,49 @@ public class Program
         // Create grid map
         GridMap gridMap = CreateMap();
 
+        // Create Player
+        Player player = new Player();
+
         bool gameRunning = true;
+        DisplayMap(gridMap, player);
+        //do
+        //{
 
-        do
-        {
-            DisplayMap(gridMap);
 
-        } while (gameRunning);
+        //} while (gameRunning);
 
         Console.ReadLine();
     }
 
-    private static void DisplayMap(GridMap gridMap)
+    private static void DisplayMap(GridMap gridMap, Player player)
     {
-        
+        "--------------------".PrintLine();
+        foreach (GridSpot map in gridMap.Map)
+        {
+            if (map.Column == player.Column && map.Row == player.Row)
+            {
+                "| X |".PrintColour(ConsoleColor.Magenta);
+            }
+            else
+            {
+                $"({map.Row},{map.Column})".PrintColour(ConsoleColor.Gray);
+            }
+
+            if (map.Row == 3)
+            {
+                "\n--------------------".PrintLine();
+            }
+        }
+
     }
 
     private static GridMap CreateMap()
     {
         GridMap output = new GridMap();
 
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 4; i++)
         {
-            for (int j = 0; j < 3; j++)
+            for (int j = 0; j < 4; j++)
             {
                 GridSpot spot = new GridSpot
                 {
@@ -39,7 +59,7 @@ public class Program
                 };
 
                 if (j == 0 && i == 2) spot.Status = GridSpotStatus.Fountain;
-                if (j == 0 && i == 0) spot.Status = GridSpotStatus.Entrance;
+                if (j == 0 && i == 0) spot.Status = GridSpotStatus.Player;
 
                 output.Map.Add(spot);
             }
@@ -52,6 +72,14 @@ public class Program
 public class GridMap
 {
     public List<GridSpot> Map { get; set; } = new List<GridSpot>();
+    public Player? _Player { get; set; }
+}
+
+public class Player
+{
+    public int Row { get; set; } = 0;
+    public int Column { get; set; } = 0;
+    public GridSpotStatus Status { get; set; } = GridSpotStatus.Player;
 }
 
 public class GridSpot
