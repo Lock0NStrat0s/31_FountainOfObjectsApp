@@ -1,0 +1,41 @@
+Chapter 31: The Fountain Of Objects
+
+// Basic Requirements:
+// Grid of rooms, referenced by rows and columns
+// Player is told what they can sense in the rooms around them
+// Player can perform action by typing it in
+// The player moves, state of things in the game changes, check for win or loss
+// Row = 0, Column = 0 is the starting point
+// Row = 0, Column 2 is the Fountain room. Fountain can be enabled/disabled. If the player tries to enable the fountain outside the Fountain room, they will be told it cannot be done.
+// Player wins by enabling Fountain and returning to the exit
+// HINT: 2-D array to represent 2-D grid 
+// Select 2 expansions after completing base game
+
+--W:-- Walk through the project
+General Flow:
+Player is shown grid including current location
+Player types in which direction to move in
+After player moves, the state of things in the game change, win/loss is checked, loop repeats
+Updated grid is displayed
+
+--O:-- Open up the requirements
+4x4 grid
+(0,0) is the Entrance
+(0,2) is the Fountain
+Type in East/West/North/South/Enable/Disable to play
+Enter Fountain room, enable, return to entrance to win game
+
+--U:-- User interface design
+UI Design:
+Console that lets player do certain actions
+Console text colour changes depending on the type of text
+
+--L:-- Logic Design
+Method: Ask for action
+Method: Sense the adjacent and current rooms
+Method: Display text pertaining to rooms sensed
+//Placeholder for expansion
+
+--D:-- Data Design
+Store grid in List
+ConsolerHelper extension method
