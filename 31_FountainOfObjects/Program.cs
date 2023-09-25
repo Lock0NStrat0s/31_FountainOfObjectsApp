@@ -16,11 +16,11 @@ public class Program
         PlayerAction(gridMap, player);
 
 
-        //do
-        //{
+        do
+        {
 
 
-        //} while (gameRunning);
+        } while (gameRunning);
 
         Console.ReadLine();
     }

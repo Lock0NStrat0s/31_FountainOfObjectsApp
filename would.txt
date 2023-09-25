@@ -37,5 +37,5 @@ Method: Display text pertaining to rooms sensed
 //Placeholder for expansion
 
 --D:-- Data Design
-Store grid in List
+Store grid in List<GridSpot>
 ConsolerHelper extension method
