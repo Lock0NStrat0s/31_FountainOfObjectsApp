@@ -15,7 +15,7 @@ public class Program
 
         PlayerAction(gridMap, player);
 
-
+        // runs main loop
         do
         {
 
