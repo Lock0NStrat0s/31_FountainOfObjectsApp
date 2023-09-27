@@ -30,7 +30,16 @@ public class Program
         "Select action: ".Print();
         string action = Console.ReadLine().ToLower();
 
+        switch (action)
+        {
+            case "east":
+                MovePlayer(0,1);
+        }
+    }
 
+    private static void MovePlayer(int v1, int v2)
+    {
+        
     }
 
     private static void DisplayMap(GridMap gridMap, Player player)
